@@ -38,14 +38,23 @@
 </head>
 
 <body>
-  
-    <h1 id="title">Puheentunnistuksen Testaus</h1>
+
+    <h1 id="title">Sanelukone, mobiililaitteelle optimoitu</h1>
+    <div>
+        <a href="index.html?lang=fi"> &lt; &lt; Etusivu </a>
+    </div>
+    </br>
+    <div>
+        <a href="sanelukone.html?lang=fi"> &lt; &lt; Tietsikkaversio </a>
+    </div>
+    </br>
+
     <label for="language-select" id="language-label">Valitse kieli:</label>
     <select id="language-select">
         <option value="fi-FI">Suomi</option>
         <option value="en-US">Englanti</option>
     </select>
-    <button id="start-btn">Aloita puheentunnistus</button>
+    <button id="start-btn">Kuuntele</button>
     <p id="transcript">Tunnistettu teksti tulee näkyviin tähän.</p>
     <textarea id="editableText" placeholder="Tunnistettu teksti tulee tähän, ja voit muokata sitä."></textarea>
 
@@ -56,14 +65,14 @@
         const languageSelect = document.getElementById('language-select');
         const title = document.getElementById('title');
         const languageLabel = document.getElementById('language-label');
-        
+
 
         // Tekstit eri kielille
         const texts = {
             'fi-FI': {
-                title: "Puheentunnistuksen Testaus",
+                title: "Puheentunnistus, mobiililaite",
                 languageLabel: "Valitse kieli:",
-                startButton: "Aloita puheentunnistus",
+                startButton: "Kuuntele",
                 defaultMessage: "Tunnistettu teksti tulee näkyviin tähän.",
                 unsupported: "Selain ei tue puheentunnistusta. Kokeile toista selainta.",
                 homepage: "<< Etusivulle",
@@ -72,9 +81,9 @@
                 ended: " (Lopetettu)"
             },
             'en-US': {
-                title: "Speech Recognition Test",
+                title: "Speech Recognition, mobile",
                 languageLabel: "Select language:",
-                startButton: "Start Speech Recognition",
+                startButton: "Listen",
                 defaultMessage: "Recognized text will appear here.",
                 unsupported: "Your browser does not support speech recognition. Try some other browser.",
                 homepage: "<< Home page",
@@ -95,7 +104,7 @@
             title.textContent = langTexts.title;
             languageLabel.textContent = langTexts.languageLabel;
             startButton.textContent = langTexts.startButton;
-            transcriptDisplay.textContent = langTexts.defaultMessage;                    
+            transcriptDisplay.textContent = langTexts.defaultMessage;
             editableText.placeholder = lang === 'fi-FI'
                 ? "Tunnistettu teksti tulee tähän, ja voit muokata sitä."
                 : "Recognized text will appear here, and you can edit it.";
