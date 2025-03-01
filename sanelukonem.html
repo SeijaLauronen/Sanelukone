@@ -56,8 +56,7 @@
         const languageSelect = document.getElementById('language-select');
         const title = document.getElementById('title');
         const languageLabel = document.getElementById('language-label');
-        const homeaddress = document.getElementById('home-page');
-        const dictationaddress = document.getElementById('dictation-page');
+        
 
         // Tekstit eri kielille
         const texts = {
@@ -96,9 +95,7 @@
             title.textContent = langTexts.title;
             languageLabel.textContent = langTexts.languageLabel;
             startButton.textContent = langTexts.startButton;
-            transcriptDisplay.textContent = langTexts.defaultMessage;
-            homeaddress.textContent = langTexts.homepage;
-            dictationaddress.textContent = langTexts.dictationpage;
+            transcriptDisplay.textContent = langTexts.defaultMessage;                    
             editableText.placeholder = lang === 'fi-FI'
                 ? "Tunnistettu teksti tulee tähän, ja voit muokata sitä."
                 : "Recognized text will appear here, and you can edit it.";
