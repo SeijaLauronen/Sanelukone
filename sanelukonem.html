@@ -51,7 +51,7 @@
 
     <label for="language-select" id="language-label">Valitse kieli:</label>
     <select id="language-select">
-        <option value="fi-FI">Suomi</option>
+        <option selected value="fi-FI">Suomi</option>
         <option value="en-US">Englanti</option>
     </select>
     <button id="start-btn">Kuuntele</button>
@@ -128,7 +128,7 @@
             secondaryRecognition.lang = languageSelect.value === 'fi-FI' ? 'en-US' : 'fi-FI';
             secondaryRecognition.interimResults = false;
 
-            recognition.onstart = () => {
+            recognition.onstart = () => {                
                 transcriptDisplay.textContent = texts[recognition.lang].listening;
             };
 
@@ -147,6 +147,7 @@
                 editableText.setSelectionRange(newCursorPosition, newCursorPosition);
             };
 
+            
             recognition.onerror = (event) => {
                 if (event.error === 'no-speech' || event.error === 'network') {
                     // Kokeile toissijaista kieltä
